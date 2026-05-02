@@ -5,6 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import TopAppBar from '../components/TopAppBar';
 import ProgressBar from '../components/ProgressBar';
 import Button from '../components/Button';
+import VerticalSlider from '../components/VerticalSlider';
 
 export default function HeightScreen({ navigation }) {
   const [height, setHeight] = useState(180);
@@ -24,52 +25,28 @@ export default function HeightScreen({ navigation }) {
         </View>
 
         <View className="flex-1 items-center justify-center relative my-lg w-full overflow-hidden">
-          <View className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <View className="w-full h-[72px] bg-white/[0.03] border-y border-primary/20 relative">
-              <View className="absolute top-0 left-1/2 w-32 h-[1px] bg-primary/40 -ml-16" />
-              <View className="absolute bottom-0 left-1/2 w-32 h-[1px] bg-primary/40 -ml-16" />
-            </View>
+
+          <View className="flex-row items-baseline justify-center w-full h-[72px] mb-8 z-20 pointer-events-none">
+             <Text className="font-h1 text-[64px] leading-none text-primary-fixed font-extrabold" style={{
+               textShadowColor: 'rgba(202,243,0,0.4)',
+               textShadowOffset: {width: 0, height: 0},
+               textShadowRadius: 15
+             }}>
+               {height}
+             </Text>
+             <Text className="ml-2 font-body-md text-xl text-primary-fixed/80">cm</Text>
           </View>
 
-          <LinearGradient colors={['#121212', 'transparent']} className="absolute top-0 left-0 w-full h-1/4 z-20 pointer-events-none" />
-          <LinearGradient colors={['transparent', '#121212']} className="absolute bottom-0 left-0 w-full h-1/4 z-20 pointer-events-none" />
+          <VerticalSlider
+             min={100} max={250}
+             initialValue={180}
+             onValueChange={(val) => setHeight(val)}
+          />
 
-          <View className="flex-col items-center justify-center gap-1 w-full z-10">
-            <View className="items-center justify-center w-full h-[60px] opacity-40">
-              <Text className="text-surface-variant font-h3 text-2xl scale-75">{height - 3}</Text>
-            </View>
-            <View className="items-center justify-center w-full h-[60px] opacity-60">
-              <Text className="text-surface-variant font-h2 text-3xl scale-90">{height - 2}</Text>
-            </View>
-            <View className="items-center justify-center w-full h-[60px] opacity-80">
-              <Text className="text-surface-variant font-h2 text-4xl">{height - 1}</Text>
-            </View>
-
-            <View className="flex-row items-baseline justify-center w-full h-[72px]">
-              <Text className="font-h1 text-[64px] leading-none text-primary-fixed font-extrabold" style={{
-                textShadowColor: 'rgba(202,243,0,0.4)',
-                textShadowOffset: {width: 0, height: 0},
-                textShadowRadius: 15
-              }}>
-                {height}
-              </Text>
-              <Text className="ml-2 font-body-md text-xl text-primary-fixed/80">cm</Text>
-            </View>
-
-            <View className="items-center justify-center w-full h-[60px] opacity-80">
-              <Text className="text-surface-variant font-h2 text-4xl">{height + 1}</Text>
-            </View>
-            <View className="items-center justify-center w-full h-[60px] opacity-60">
-              <Text className="text-surface-variant font-h2 text-3xl scale-90">{height + 2}</Text>
-            </View>
-            <View className="items-center justify-center w-full h-[60px] opacity-40">
-              <Text className="text-surface-variant font-h3 text-2xl scale-75">{height + 3}</Text>
-            </View>
-          </View>
         </View>
 
         <View className="mt-auto pt-md pb-md">
-          <Button onPress={() => navigation.navigate('InjuryScreen')} />
+          <Button onPress={() => navigation.navigate('CurrentWeightScreen')} />
         </View>
       </View>
     </SafeAreaView>

@@ -85,7 +85,7 @@ export default function GoalScreen({ navigation }) {
         colors={['transparent', '#131313', '#131313']}
         className="absolute bottom-0 left-0 right-0 px-margin pt-md pb-xl z-10"
       >
-        <Button onPress={() => navigation.navigate('GenderScreen')} />
+        <Button onPress={() => navigation.navigate('TargetWeightScreen')} />
       </LinearGradient>
     </SafeAreaView>
   );

@@ -101,7 +101,7 @@ export default function FitnessLevelScreen({ navigation }) {
         colors={['transparent', '#131313', '#131313']}
         className="absolute bottom-0 left-0 right-0 p-6 pt-12 z-50"
       >
-        <Button onPress={() => navigation.navigate('SleepScreen')} />
+        <Button onPress={() => navigation.navigate('WorkoutEnvironmentScreen')} />
       </LinearGradient>
     </SafeAreaView>
   );

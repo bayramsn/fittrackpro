@@ -1,28 +1,22 @@
 import React, { useState } from 'react';
 import { View, Text, SafeAreaView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import TopAppBar from '../../components/TopAppBar';
+import Button from '../../components/Button';
+import HorizontalRulerSlider from '../../components/HorizontalRulerSlider';
 
-import TopAppBar from '../components/TopAppBar';
-import ProgressBar from '../components/ProgressBar';
-import Button from '../components/Button';
-import HorizontalRulerSlider from '../components/HorizontalRulerSlider';
-
-export default function CurrentWeightScreen({ navigation }) {
-  const [weight, setWeight] = useState(75);
+export default function WeightEntryScreen({ navigation }) {
+  const [weight, setWeight] = useState(74);
 
   return (
     <SafeAreaView className="flex-1 bg-background">
-      <TopAppBar minimal={true} />
+      <TopAppBar title="Kilo Gir" showBack={true} />
 
       <View className="flex-1 w-full flex flex-col items-center justify-center px-6 relative z-0">
-        <View className="w-full absolute top-0 px-6 pt-4">
-          <ProgressBar progress={35} />
-        </View>
-
         <View className="text-center mb-xl w-full max-w-sm mt-12">
-          <Text className="font-h1 text-[36px] text-primary mb-sm text-center leading-tight">Kilon kaç kg?</Text>
+          <Text className="font-h1 text-[36px] text-primary mb-sm text-center leading-tight">Bugünkü Kilon</Text>
           <Text className="font-body-md text-body-md text-on-surface-variant text-center px-4">
-            Vücuduna en uygun programı oluşturabilmemiz için bu bilgiye ihtiyacımız var.
+            Düzenli takip gelişimi görmeni sağlar.
           </Text>
         </View>
 
@@ -36,7 +30,7 @@ export default function CurrentWeightScreen({ navigation }) {
 
           <HorizontalRulerSlider
              min={30} max={200}
-             initialValue={75}
+             initialValue={74}
              step={1}
              onValueChange={(val) => setWeight(val)}
           />
@@ -49,7 +43,7 @@ export default function CurrentWeightScreen({ navigation }) {
         colors={['transparent', '#131313', '#131313']}
         className="absolute bottom-0 left-0 w-full px-6 py-8 mt-auto shrink-0 z-10 relative"
       >
-        <Button onPress={() => navigation.navigate('GoalScreen')} />
+        <Button title="Kaydet" onPress={() => navigation.goBack()} />
       </LinearGradient>
     </SafeAreaView>
   );
