@@ -11,6 +11,9 @@ import { useFonts as useLexendFonts, Lexend_700Bold, Lexend_800ExtraBold } from 
 // Screens
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import GoalScreen from './src/screens/GoalScreen';
+import LoginScreen from './src/screens/LoginScreen';
+import RegisterScreen from './src/screens/RegisterScreen';
+import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import GenderScreen from './src/screens/GenderScreen';
 import TargetWeightScreen from './src/screens/TargetWeightScreen';
 import CurrentWeightScreen from './src/screens/CurrentWeightScreen';
@@ -25,6 +28,9 @@ import HeightScreen from './src/screens/HeightScreen';
 import InjuryScreen from './src/screens/InjuryScreen';
 import TargetMuscleScreen from './src/screens/TargetMuscleScreen';
 import ProgramRecommendationScreen from './src/screens/ProgramRecommendationScreen';
+import MainTabNavigator from './src/navigation/MainTabNavigator';
+import ActiveWorkoutScreen from './src/screens/main/ActiveWorkoutScreen';
+import BMICalculatorScreen from './src/screens/main/BMICalculatorScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -68,6 +74,9 @@ export default function App() {
           }}
         >
           <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+          <Stack.Screen name="LoginScreen" component={LoginScreen} />
+          <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
+          <Stack.Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen} />
           <Stack.Screen name="GoalScreen" component={GoalScreen} />
           <Stack.Screen name="GenderScreen" component={GenderScreen} />
           <Stack.Screen name="CurrentWeightScreen" component={CurrentWeightScreen} />
@@ -83,6 +92,9 @@ export default function App() {
           <Stack.Screen name="InjuryScreen" component={InjuryScreen} />
           <Stack.Screen name="TargetMuscleScreen" component={TargetMuscleScreen} />
           <Stack.Screen name="ProgramRecommendationScreen" component={ProgramRecommendationScreen} />
+          <Stack.Screen name="MainTabs" component={MainTabNavigator} options={{ animation: 'fade' }} />
+          <Stack.Screen name="ActiveWorkout" component={ActiveWorkoutScreen} options={{ presentation: 'fullScreenModal', animation: 'slide_from_bottom' }} />
+          <Stack.Screen name="BMICalculator" component={BMICalculatorScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

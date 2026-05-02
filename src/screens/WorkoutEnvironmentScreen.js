@@ -86,7 +86,7 @@ export default function WorkoutEnvironmentScreen({ navigation }) {
         colors={['transparent', 'rgba(19,19,19,0.9)', '#131313']}
         className="absolute bottom-0 left-0 right-0 p-6 pt-lg z-50"
       >
-        <Button onPress={() => navigation.navigate('HeightScreen')} />
+        <Button onPress={() => navigation.navigate('WorkoutDaysScreen')} />
       </LinearGradient>
     </SafeAreaView>
   );

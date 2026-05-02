@@ -90,7 +90,7 @@ export default function TargetWeightScreen({ navigation }) {
         </View>
 
         <View className="mt-auto pt-6">
-          <Button onPress={() => navigation.navigate('NutritionScreen')} />
+          <Button onPress={() => navigation.navigate('FitnessLevelScreen')} />
         </View>
       </View>
     </SafeAreaView>
