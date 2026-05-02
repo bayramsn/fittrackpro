@@ -64,10 +64,10 @@ export default function ActiveWorkoutScreen({ navigation }) {
       <View className="flex-1 px-margin -mt-10 relative z-10">
         <View className="flex-row justify-between items-end mb-6">
           <View>
-             <Text className="font-h1 text-[32px] text-primary leading-tight">{currentExercise.title}</Text>
+             <TouchableOpacity onPress={() => navigation.navigate('ExerciseDetail')}><Text className="font-h1 text-[32px] text-primary leading-tight underline">{currentExercise.title}</Text></TouchableOpacity>
              <Text className="font-body-md text-secondary">Göğüs • Ana Hareket</Text>
           </View>
-          <TouchableOpacity className="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center border border-outline-variant">
+          <TouchableOpacity onPress={() => navigation.navigate('AlternativeExercise')} className="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center border border-outline-variant">
              <MaterialIcons name="swap-horiz" size={24} color="#e5e2e1" />
           </TouchableOpacity>
         </View>

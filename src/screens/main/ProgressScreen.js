@@ -71,7 +71,7 @@ export default function ProgressScreen({ navigation }) {
                   <MaterialIcons name="chevron-right" size={24} color="#656464" />
                </TouchableOpacity>
 
-               <TouchableOpacity className="bg-surface-container rounded-xl p-4 border border-[#ffffff10] flex-row items-center justify-between">
+               <TouchableOpacity onPress={() => navigation.navigate('ProgressGallery')} className="bg-surface-container rounded-xl p-4 border border-[#ffffff10] flex-row items-center justify-between">
                   <View className="flex-row items-center gap-3">
                      <View className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
                         <MaterialIcons name="photo-camera" size={20} color="#caf300" />
@@ -81,7 +81,7 @@ export default function ProgressScreen({ navigation }) {
                   <MaterialIcons name="chevron-right" size={24} color="#656464" />
                </TouchableOpacity>
 
-               <TouchableOpacity className="bg-surface-container rounded-xl p-4 border border-[#ffffff10] flex-row items-center justify-between">
+               <TouchableOpacity onPress={() => navigation.navigate('ProgressGallery')} className="bg-surface-container rounded-xl p-4 border border-[#ffffff10] flex-row items-center justify-between">
                   <View className="flex-row items-center gap-3">
                      <View className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
                         <MaterialIcons name="straighten" size={20} color="#caf300" />

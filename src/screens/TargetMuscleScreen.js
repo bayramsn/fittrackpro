@@ -139,7 +139,7 @@ export default function TargetMuscleScreen({ navigation }) {
         className="absolute bottom-0 left-0 right-0 px-margin pt-md pb-8 z-40"
       >
         <View className="max-w-lg mx-auto w-full">
-          <Button onPress={() => navigation.navigate('ProgramRecommendationScreen')} />
+          <Button onPress={() => navigation.navigate('InjuryScreen')} />
         </View>
       </LinearGradient>
     </SafeAreaView>

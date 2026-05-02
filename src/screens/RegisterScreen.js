@@ -72,7 +72,7 @@ export default function RegisterScreen({ navigation }) {
         </ScrollView>
 
         <View className="pb-xl gap-y-4 pt-4 border-t border-[#ffffff10]">
-          <Button title="Kayıt Ol" onPress={() => navigation.navigate('GoalScreen')} />
+          <Button title="Kayıt Ol" onPress={() => navigation.navigate('MainTabs')} />
           <View className="flex-row justify-center gap-x-1 mt-4">
             <Text className="text-secondary font-body-md">Zaten hesabın var mı?</Text>
             <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}>

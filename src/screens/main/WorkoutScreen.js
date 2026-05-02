@@ -62,6 +62,20 @@ export default function WorkoutScreen({ navigation }) {
            >
               <MaterialIcons name="swap-horiz" size={20} color="#e5e2e1" />
               <Text className="font-label-caps text-primary ml-2">PROGRAMI DEĞİŞTİR</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                 onPress={() => navigation.navigate('OneRMCalculator')}
+                 className="mt-4 bg-surface-container py-4 rounded-full border border-outline-variant flex-row items-center justify-center"
+              >
+                 <MaterialIcons name="calculate" size={20} color="#e5e2e1" />
+                 <Text className="font-label-caps text-primary ml-2">1RM HESAPLAYICI</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                 onPress={() => navigation.navigate('WorkoutDelay')}
+                 className="mt-4 bg-surface-container py-4 rounded-full border border-outline-variant flex-row items-center justify-center"
+              >
+                 <MaterialIcons name="event-busy" size={20} color="#e5e2e1" />
+                 <Text className="font-label-caps text-primary ml-2">ANTRENMANI ERTELE</Text>
            </TouchableOpacity>
 
          </View>

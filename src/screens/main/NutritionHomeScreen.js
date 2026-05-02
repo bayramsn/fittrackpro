@@ -40,7 +40,7 @@ export default function NutritionHomeScreen() {
                       <Text className="font-body-md text-secondary text-[14px]">Önerilen: 600 kcal</Text>
                     </View>
                   </View>
-                  <TouchableOpacity className="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center shadow-lg">
+                  <TouchableOpacity onPress={() => navigation.navigate('FoodSearch')} className="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center shadow-lg">
                     <MaterialIcons name="add" size={24} color="#171e00" />
                   </TouchableOpacity>
                 </View>

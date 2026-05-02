@@ -6,11 +6,19 @@ import TopAppBar from '../../components/TopAppBar';
 export default function ProfileScreen({ navigation }) {
   const menuItems = [
     { title: "Hedeflerim", icon: "flag" },
-    { title: "Vücut Ölçülerim", icon: "straighten" },
-    { title: "Takviyeler", icon: "medication" },
-    { title: "Ayarlar", icon: "settings" },
+    { title: "Hesap Ayarları", icon: "person" },
+    { title: "Bildirim Ayarları", icon: "notifications" },
+    { title: "Harici Uygulamalar", icon: "apps" },
     { title: "Çıkış Yap", icon: "logout", color: "#ffb4ab" }
   ];
+
+  const handleNav = (title) => {
+     if (title === 'Çıkış Yap') navigation.navigate('WelcomeScreen');
+     else if (title === 'Hedeflerim') navigation.navigate('EditGoalsNav');
+     else if (title === 'Hesap Ayarları') navigation.navigate('AccountSettings');
+     else if (title === 'Bildirim Ayarları') navigation.navigate('NotificationSettings');
+     else if (title === 'Harici Uygulamalar') navigation.navigate('ExternalApps');
+  };
 
   return (
     <SafeAreaView className="flex-1 bg-background">
@@ -55,7 +63,7 @@ export default function ProfileScreen({ navigation }) {
                <TouchableOpacity
                   key={idx}
                   className={`flex-row items-center justify-between p-5 ${idx !== menuItems.length - 1 ? 'border-b border-[#ffffff10]' : ''}`}
-                  onPress={() => item.title === 'Çıkış Yap' ? navigation.navigate('WelcomeScreen') : null}
+                  onPress={() => handleNav(item.title)}
                >
                  <View className="flex-row items-center gap-4">
                     <MaterialIcons name={item.icon} size={24} color={item.color || "#e5e2e1"} />

@@ -113,6 +113,18 @@ export default function HomeScreen({ navigation }) {
               </TouchableOpacity>
             </View>
 
+            <View className="flex-row gap-x-2 mb-sm">
+              <TouchableOpacity onPress={() => navigation.navigate('WeightEntry')} className="flex-1 bg-surface-container rounded-xl p-3 border border-[#ffffff10] flex-row items-center justify-between">
+                 <Text className="font-h3 text-primary text-[14px]">Kilo Gir</Text>
+                 <MaterialIcons name="monitor-weight" size={20} color="#caf300" />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate('SupplementTracking')} className="flex-1 bg-surface-container rounded-xl p-3 border border-[#ffffff10] flex-row items-center justify-between">
+                 <Text className="font-h3 text-primary text-[14px]">Takviyeler</Text>
+                 <MaterialIcons name="medication" size={20} color="#caf300" />
+              </TouchableOpacity>
+            </View>
+
+
             <View className="bg-surface-container p-md rounded-xl border border-[#ffffff10]">
               <View className="flex-row justify-between mb-4">
                 <View className="flex-col">
