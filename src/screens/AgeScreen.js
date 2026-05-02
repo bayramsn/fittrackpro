@@ -5,6 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import TopAppBar from '../components/TopAppBar';
 import ProgressBar from '../components/ProgressBar';
 import Button from '../components/Button';
+import VerticalSlider from '../components/VerticalSlider';
 
 export default function AgeScreen({ navigation }) {
   const [age, setAge] = useState(25);
@@ -37,39 +38,23 @@ export default function AgeScreen({ navigation }) {
         </View>
 
         <View className="flex-1 items-center justify-center relative my-12 w-full overflow-hidden">
-          <View className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <View className="w-full h-[72px] bg-white/[0.03] border-y border-primary/20 relative">
-              <View className="absolute top-0 left-1/2 -ml-16 w-32 h-[1px] bg-primary/40" />
-              <View className="absolute bottom-0 left-1/2 -ml-16 w-32 h-[1px] bg-primary/40" />
-            </View>
+
+          <View className="items-center justify-center w-full h-[72px] relative z-20 mb-8 pointer-events-none">
+             <Text className="font-h1 text-[64px] leading-none text-primary-container font-extrabold" style={{
+               textShadowColor: 'rgba(202,243,0,0.4)',
+               textShadowOffset: {width: 0, height: 0},
+               textShadowRadius: 15
+             }}>
+               {age}
+             </Text>
           </View>
 
-          <LinearGradient colors={['#131313', 'transparent']} className="absolute top-0 left-0 w-full h-1/4 z-20 pointer-events-none" />
-          <LinearGradient colors={['transparent', '#131313']} className="absolute bottom-0 left-0 w-full h-1/4 z-20 pointer-events-none" />
+          <VerticalSlider
+             min={12} max={99}
+             initialValue={25}
+             onValueChange={(val) => setAge(val)}
+          />
 
-          <View className="flex-col items-center justify-center gap-1 w-full z-10">
-            <View className="items-center justify-center w-full h-[60px]">
-              <Text className="text-surface-variant font-h2 text-3xl scale-90">{age - 2}</Text>
-            </View>
-            <View className="items-center justify-center w-full h-[60px]">
-              <Text className="text-surface-variant font-h2 text-4xl">{age - 1}</Text>
-            </View>
-            <View className="items-center justify-center w-full h-[72px] relative">
-              <Text className="font-h1 text-[64px] leading-none text-primary-container font-extrabold" style={{
-                textShadowColor: 'rgba(202,243,0,0.4)',
-                textShadowOffset: {width: 0, height: 0},
-                textShadowRadius: 15
-              }}>
-                {age}
-              </Text>
-            </View>
-            <View className="items-center justify-center w-full h-[60px]">
-              <Text className="text-surface-variant font-h2 text-4xl">{age + 1}</Text>
-            </View>
-            <View className="items-center justify-center w-full h-[60px]">
-              <Text className="text-surface-variant font-h2 text-3xl scale-90">{age + 2}</Text>
-            </View>
-          </View>
         </View>
 
         <Text className="text-center font-body-md text-sm text-on-surface-variant/60 mt-2 mb-8">

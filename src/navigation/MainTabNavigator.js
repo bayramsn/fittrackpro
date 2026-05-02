@@ -6,6 +6,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import HomeScreen from '../screens/main/HomeScreen';
 import WorkoutScreen from '../screens/main/WorkoutScreen';
 import NutritionHomeScreen from '../screens/main/NutritionHomeScreen';
+import ProgressScreen from '../screens/main/ProgressScreen';
 import ProfileScreen from '../screens/main/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
@@ -40,6 +41,8 @@ export default function MainTabNavigator() {
             iconName = 'fitness-center';
           } else if (route.name === 'Nutrition') {
             iconName = 'restaurant-menu';
+          } else if (route.name === 'Progress') {
+            iconName = 'insights';
           } else if (route.name === 'Profile') {
             iconName = 'person';
           }
@@ -55,6 +58,7 @@ export default function MainTabNavigator() {
       <Tab.Screen name="Home" component={HomeScreen} options={{ tabBarLabel: 'ANA SAYFA' }} />
       <Tab.Screen name="Workout" component={WorkoutScreen} options={{ tabBarLabel: 'ANTRENMAN' }} />
       <Tab.Screen name="Nutrition" component={NutritionHomeScreen} options={{ tabBarLabel: 'BESLENME' }} />
+      <Tab.Screen name="Progress" component={ProgressScreen} options={{ tabBarLabel: 'GELİŞİM' }} />
       <Tab.Screen name="Profile" component={ProfileScreen} options={{ tabBarLabel: 'PROFİL' }} />
     </Tab.Navigator>
   );

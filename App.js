@@ -11,6 +11,8 @@ import { useFonts as useLexendFonts, Lexend_700Bold, Lexend_800ExtraBold } from 
 // Screens
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import GoalScreen from './src/screens/GoalScreen';
+import NutritionPreferenceScreen from './src/screens/NutritionPreferenceScreen';
+import PlanSummaryScreen from './src/screens/PlanSummaryScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import RegisterScreen from './src/screens/RegisterScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
@@ -78,6 +80,8 @@ export default function App() {
           <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
           <Stack.Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen} />
           <Stack.Screen name="GoalScreen" component={GoalScreen} />
+          <Stack.Screen name="NutritionPreferenceScreen" component={NutritionPreferenceScreen} />
+          <Stack.Screen name="PlanSummaryScreen" component={PlanSummaryScreen} />
           <Stack.Screen name="GenderScreen" component={GenderScreen} />
           <Stack.Screen name="CurrentWeightScreen" component={CurrentWeightScreen} />
           <Stack.Screen name="TargetWeightScreen" component={TargetWeightScreen} />

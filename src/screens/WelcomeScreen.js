@@ -32,7 +32,7 @@ export default function WelcomeScreen({ navigation }) {
           <View className="gap-y-4 w-full">
             <TouchableOpacity
               activeOpacity={0.8}
-              onPress={() => navigation.navigate('GoalScreen')}
+              onPress={() => navigation.navigate('GenderScreen')}
               className="w-full bg-primary-fixed py-4 rounded-full flex items-center justify-center shadow-lg"
               style={{
                 shadowColor: "rgba(202,243,0,0.25)",
