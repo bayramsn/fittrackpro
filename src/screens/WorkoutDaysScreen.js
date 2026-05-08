@@ -34,7 +34,7 @@ export default function WorkoutDaysScreen({ navigation }) {
           <Text className="font-body-lg text-[18px] text-on-surface-variant">Sürdürülebilir bir program için gerçekçi bir hedef belirle.</Text>
         </View>
 
-        <View className="flex-row flex-wrap justify-center gap-4">
+        <View className="flex-row flex-wrap justify-center justify-between mb-4">
           {[1, 2, 3, 4, 5, 6, 7].map((day) => {
             const isSelected = selectedDay === day;
             return (
@@ -42,7 +42,7 @@ export default function WorkoutDaysScreen({ navigation }) {
                 key={day}
                 activeOpacity={0.8}
                 onPress={() => setSelectedDay(day)}
-                className={`w-[30%] aspect-square rounded-xl flex flex-col items-center justify-center gap-1 transition-all ${
+                className={`w-[31%] h-28 mb-4 rounded-xl flex flex-col items-center justify-center gap-1 transition-all ${
                   isSelected
                     ? 'bg-primary-container border-2 border-primary-container'
                     : 'bg-surface-container border border-[#ffffff10]'

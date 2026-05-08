@@ -20,7 +20,7 @@ export default function SleepScreen({ navigation }) {
         <View className="flex-1 flex-col justify-center items-center relative">
           <View className="absolute inset-0 bg-primary-container opacity-5 rounded-full z-[-1]" style={{
             shadowColor: '#caf300',
-            shadowOpacity: 0.1,
+            shadowOpacity: 0.05,
             shadowRadius: 100,
             elevation: 0,
             transform: [{ scale: 1.5 }]

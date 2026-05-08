@@ -42,7 +42,7 @@ export default function FitnessLevelScreen({ navigation }) {
         </View>
 
         <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
-          <View className="flex-col gap-sm pb-12">
+          <View className="flex-col gap-md pb-32">
             {options.map((option) => {
               const isSelected = fitnessLevel === option.id;
 
@@ -51,7 +51,7 @@ export default function FitnessLevelScreen({ navigation }) {
                   key={option.id}
                   activeOpacity={0.8}
                   onPress={() => setFitnessLevel(option.id)}
-                  className={`relative flex-row items-center p-md rounded-xl border mb-4 overflow-hidden ${
+                  className={`relative flex-row items-center p-md rounded-xl border mb-0 overflow-hidden ${
                     isSelected
                       ? 'bg-surface-container border-primary-fixed'
                       : 'bg-surface-container-low border-surface-container-highest'

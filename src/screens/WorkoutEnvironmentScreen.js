@@ -29,7 +29,7 @@ export default function WorkoutEnvironmentScreen({ navigation }) {
         </View>
 
         <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
-          <View className="flex-col gap-margin">
+          <View className="flex-col gap-2 pb-32">
             {options.map((option) => {
               const isSelected = environment === option.id;
 
@@ -38,7 +38,7 @@ export default function WorkoutEnvironmentScreen({ navigation }) {
                   key={option.id}
                   activeOpacity={0.8}
                   onPress={() => setEnvironment(option.id)}
-                  className={`w-full flex-row items-center p-md rounded-xl border mb-5 ${
+                  className={`w-full flex-row items-center p-md rounded-xl border mb-2 ${
                     isSelected
                       ? 'bg-surface-container-high border-primary-fixed'
                       : 'bg-surface-container border-outline-variant opacity-80'

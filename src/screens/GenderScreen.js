@@ -52,7 +52,7 @@ export default function GenderScreen({ navigation }) {
                 {selectedGender === 'male' && <MaterialIcons name="check" size={16} color="#2a3400" />}
               </View>
 
-              <View className="w-full h-[170px] rounded-lg overflow-hidden mb-3 relative">
+              <View className="w-full h-[180px] rounded-lg overflow-hidden mb-3 relative">
                 <Image
                   source={{ uri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAMfV_LjWfXZ3iRvtVqVymzPRlrWDlHelxyEpBQS6J8aiuwqpH5a4Omfbbh6rUb0aEkbD8GZgDFTkAv8nDgW672nNq9ntkRPwn8WYIMrzbk0WSdG1F_EdB6QE18dn1gKD0R1zIZZDuBdbVs_0Zkq-pAfx_MKXYbWEq9Y3AA8X4eg681UbARpZ-ifGlHr0AMRbNI8bAwPy3s0ffk5ze_l5E59wAEUCMsqKLJ2Cp-pElUfNC0SnQeGCwX1bWZhCq3SfGUSrewiQcZr5g' }}
                   className={`w-full h-full ${selectedGender !== 'male' ? 'grayscale opacity-70' : 'opacity-100'}`}
@@ -95,7 +95,7 @@ export default function GenderScreen({ navigation }) {
                 {selectedGender === 'female' && <MaterialIcons name="check" size={16} color="#2a3400" />}
               </View>
 
-              <View className="w-full h-[170px] rounded-lg overflow-hidden mb-3 relative">
+              <View className="w-full h-[180px] rounded-lg overflow-hidden mb-3 relative">
                 <Image
                   source={{ uri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC-3J7imio2j4KCYwMnPtTZenLBZZ-NOJONaPIrY_LvUn3WUpNfOWf17AmXv6uOvOdJd8hgoL9w71BiyUFxfkHhG_znfwNvj7kLf__gvQJZ2belcNybnrFoQdTBsD9YQCXR0kaXGuCoezhxBv9ZGUUtwBI8PlAuh4FZk72VSzDDCN97hEHXmKOhy4Yu7kDdBSE6nysVbEoAE32x0ypJFpQtJMZzTKoGMQnROcDp_qG1aUked3UXiWW_CcDbCZ2ORlWWhb03gzy1CA8' }}
                   className={`w-full h-full ${selectedGender !== 'female' ? 'grayscale opacity-70' : 'opacity-100'}`}

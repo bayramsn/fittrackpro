@@ -32,7 +32,7 @@ export default function ActivityScreen({ navigation }) {
         </View>
 
         <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
-          <View className="flex-col gap-sm pb-32">
+          <View className="flex-col gap-md pb-32">
             {options.map((option) => {
               const isSelected = activityLevel === option.id;
 
@@ -41,7 +41,7 @@ export default function ActivityScreen({ navigation }) {
                   key={option.id}
                   activeOpacity={0.8}
                   onPress={() => setActivityLevel(option.id)}
-                  className={`relative flex-col p-md rounded-xl border mb-4 min-h-[160px] ${
+                  className={`relative flex-col p-md rounded-xl border mb-0 min-h-[150px] ${
                     isSelected
                       ? 'bg-surface-container-high border-primary-fixed shadow-lg'
                       : 'bg-surface-container border-surface-container-highest'

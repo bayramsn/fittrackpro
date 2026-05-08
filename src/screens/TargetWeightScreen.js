@@ -49,7 +49,7 @@ export default function TargetWeightScreen({ navigation }) {
             <View className="absolute left-1/2 top-0 w-4 h-4 bg-primary-container rounded-b-full -ml-[8px] z-20" />
             <View className="absolute left-1/2 bottom-0 w-4 h-4 bg-primary-container rounded-t-full -ml-[8px] z-20" />
 
-            <View className="flex-row items-center space-x-6 h-full px-4">
+            <View className="flex-row items-center space-x-4 h-full px-4">
               <View className="items-center opacity-50 px-3">
                 <Text className="font-body-lg text-body-lg text-on-surface-variant mb-2">60</Text>
                 <View className="w-1 h-8 bg-surface-variant rounded-full" />

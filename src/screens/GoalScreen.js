@@ -41,7 +41,7 @@ export default function GoalScreen({ navigation }) {
                   key={goal.id}
                   activeOpacity={0.8}
                   onPress={() => setSelectedGoal(goal.id)}
-                  className={`w-[48%] aspect-square flex flex-col items-center justify-center p-md rounded-xl mb-4 border ${
+                  className={`w-[48%] h-44 flex flex-col items-center justify-center p-md rounded-xl mb-4 border ${
                     isSelected
                       ? 'bg-surface-container-high border-primary-container'
                       : 'bg-surface-container border-outline-variant'
