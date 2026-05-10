@@ -5,6 +5,7 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [user, setUser] = useState({
     profile: {
+      name: 'Bayram',
       gender: null,
       age: null,
       height: null,
@@ -14,22 +15,42 @@ export const AppProvider = ({ children }) => {
       activityLevel: null,
       environment: null,
       daysPerWeek: 4,
+      workoutDuration: 60,
+      availableDays: [],
       nutritionType: 'normal',
       sleepHours: 8,
       injuries: [],
+      level: 'intermediate',
+      targetMuscles: [],
     },
     onboardingComplete: false,
     isAuthenticated: false,
+    isPremium: false,
+    streak: 5,
+    xp: 1250,
+    level: 12,
   });
 
   const [dailyStats, setDailyStats] = useState({
-    calories: { goal: 2300, consumed: 0 },
-    protein: { goal: 160, consumed: 0 },
-    carbs: { goal: 250, consumed: 0 },
-    fat: { goal: 70, consumed: 0 },
-    water: { goal: 2500, consumed: 0 },
-    steps: { goal: 10000, current: 0 },
+    calories: { goal: 2300, consumed: 1450 },
+    protein: { goal: 160, consumed: 92 },
+    carbs: { goal: 250, consumed: 120 },
+    fat: { goal: 70, consumed: 45 },
+    water: { goal: 2500, consumed: 1250 },
+    steps: { goal: 10000, current: 7420 },
+    tasks: [
+      { id: 1, title: 'Antrenmanı tamamla', completed: false },
+      { id: 2, title: '2L su iç', completed: true },
+      { id: 3, title: 'Protein hedefini tamamla', completed: false },
+      { id: 4, title: '30 dk yürüyüş yap', completed: true },
+    ],
   });
+
+  const [workoutHistory, setWorkoutHistory] = useState([]);
+  const [personalRecords, setPersonalRecords] = useState([
+    { exercise: 'Bench Press', value: '100 kg', date: '2024-05-01' },
+    { exercise: 'Squat', value: '140 kg', date: '2024-04-25' },
+  ]);
 
   const updateProfile = useCallback((data) => {
     setUser((prev) => ({
@@ -53,13 +74,25 @@ export const AppProvider = ({ children }) => {
     }));
   }, []);
 
+  const toggleTask = useCallback((taskId) => {
+    setDailyStats((prev) => ({
+      ...prev,
+      tasks: prev.tasks.map(task =>
+        task.id === taskId ? { ...task, completed: !task.completed } : task
+      ),
+    }));
+  }, []);
+
   const value = {
     user,
     dailyStats,
+    workoutHistory,
+    personalRecords,
     updateProfile,
     setOnboardingComplete,
     login,
     logWater,
+    toggleTask,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

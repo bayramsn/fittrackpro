@@ -10,8 +10,7 @@ import ProgressBar from '../components/ProgressBar';
 export default function ProgramRecommendationScreen({ navigation }) {
   const { setOnboardingComplete } = useApp();
   const handleFinishOnboarding = () => {
-    setOnboardingComplete(true);
-    // MainTabs is now the only screen when onboardingComplete is true
+    navigation.navigate('SubscriptionOfferScreen');
   };
 
   const handleOpenVideo = async () => {

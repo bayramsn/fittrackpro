@@ -24,7 +24,7 @@ const MacroItem = ({ label, current, goal, color, icon }) => {
 };
 
 export default function DashboardScreen({ navigation }) {
-  const { dailyStats, logWater } = useApp();
+  const { user, dailyStats, logWater, toggleTask } = useApp();
 
   return (
     <SafeAreaView className="flex-1 bg-background">
@@ -32,8 +32,13 @@ export default function DashboardScreen({ navigation }) {
         {/* Header */}
         <View className="px-margin pt-4 mb-8 flex-row justify-between items-center">
           <View>
-            <Text className="text-on-surface-variant font-body-md">Merhaba Bayram 👋</Text>
-            <Text className="text-primary font-h1 text-2xl">FitTrack Pro</Text>
+            <Text className="text-on-surface-variant font-body-md">Merhaba {user.profile.name} 👋</Text>
+            <View className="flex-row items-center">
+               <Text className="text-primary font-h1 text-2xl">FitTrack Pro</Text>
+               <View className="ml-3 bg-primary-fixed/10 px-2 py-0.5 rounded-full border border-primary-fixed/20">
+                  <Text className="text-primary-container text-[10px] font-bold">LVL {user.level}</Text>
+               </View>
+            </View>
           </View>
           <TouchableOpacity className="w-10 h-10 bg-surface-container rounded-full items-center justify-center border border-white/10">
             <MaterialIcons name="notifications-none" size={24} color="#fff" />
@@ -101,6 +106,28 @@ export default function DashboardScreen({ navigation }) {
               <Text className="text-primary text-[10px] font-bold mt-2 text-center">AI Koç</Text>
             </TouchableOpacity>
           </ScrollView>
+        </View>
+
+        {/* Daily Tasks */}
+        <View className="px-margin mb-8">
+           <Text className="text-primary font-h3 text-lg mb-4">Bugünkü Görevler</Text>
+           <View className="bg-surface-container rounded-3xl p-4 gap-3 border border-white/5">
+              {dailyStats.tasks.map(task => (
+                <TouchableOpacity
+                  key={task.id}
+                  onPress={() => toggleTask(task.id)}
+                  className="flex-row items-center justify-between p-2"
+                >
+                  <View className="flex-row items-center">
+                    <View className={`w-6 h-6 rounded-full border-2 items-center justify-center ${task.completed ? 'bg-primary-fixed border-primary-fixed' : 'border-outline-variant'}`}>
+                       {task.completed && <MaterialIcons name="check" size={14} color="#171e00" />}
+                    </View>
+                    <Text className={`ml-3 font-medium ${task.completed ? 'text-on-surface-variant/40 line-through' : 'text-primary'}`}>{task.title}</Text>
+                  </View>
+                  {!task.completed && <MaterialIcons name="chevron-right" size={20} color="#666" />}
+                </TouchableOpacity>
+              ))}
+           </View>
         </View>
 
         {/* Today's Workout */}

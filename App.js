@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, ActivityIndicator, Text } from 'react-native';
+import { View, ActivityIndicator, Text, TouchableOpacity } from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
@@ -31,6 +31,8 @@ import TargetMuscleScreen from './src/screens/TargetMuscleScreen';
 import ProgramRecommendationScreen from './src/screens/ProgramRecommendationScreen';
 import WorkoutActiveScreen from './src/screens/WorkoutActiveScreen';
 import PlanGeneratingScreen from './src/screens/PlanGeneratingScreen';
+import SubscriptionOfferScreen from './src/screens/SubscriptionOfferScreen';
+import CameraAnalysisScreen from './src/screens/CameraAnalysisScreen';
 
 // Tab Screens
 import DashboardScreen from './src/screens/DashboardScreen';
@@ -85,7 +87,6 @@ const TabBar = ({ activeTab, setActiveTab }) => {
 
 function MainTabs({ navigation }) {
   const [activeTab, setActiveTab] = React.useState('Dashboard');
-  const { user } = useApp();
 
   const renderContent = () => {
     switch (activeTab) {
@@ -103,39 +104,10 @@ function MainTabs({ navigation }) {
       <View className="flex-1">
         {renderContent()}
       </View>
-      <View className="flex-row bg-surface-container border-t border-white/5 pb-8 pt-2">
-        {[
-          { name: 'Dashboard', icon: 'home', label: 'Ana Sayfa' },
-          { name: 'Workouts', icon: 'fitness-center', label: 'Antrenman' },
-          { name: 'Nutrition', icon: 'restaurant', label: 'Beslenme' },
-          { name: 'Progress', icon: 'trending-up', label: 'Gelişim' },
-          { name: 'Profile', icon: 'person', label: 'Profil' },
-        ].map((tab) => {
-          const isActive = activeTab === tab.name;
-          return (
-            <View key={tab.name} className="flex-1">
-              <TouchableOpacity
-                onPress={() => setActiveTab(tab.name)}
-                className="items-center justify-center py-2"
-              >
-                <MaterialIcons
-                  name={tab.icon}
-                  size={24}
-                  color={isActive ? '#caf300' : '#8f9378'}
-                />
-                <Text className={`text-[10px] mt-1 font-medium ${isActive ? 'text-primary-container' : 'text-on-surface-variant/60'}`}>
-                  {tab.label}
-                </Text>
-              </TouchableOpacity>
-            </View>
-          );
-        })}
-      </View>
+      <TabBar activeTab={activeTab} setActiveTab={setActiveTab} />
     </View>
   );
 }
-
-import { TouchableOpacity } from 'react-native';
 
 function Navigation() {
   const { user } = useApp();
@@ -170,11 +142,13 @@ function Navigation() {
             <Stack.Screen name="TargetMuscleScreen" component={TargetMuscleScreen} />
             <Stack.Screen name="PlanGeneratingScreen" component={PlanGeneratingScreen} />
             <Stack.Screen name="ProgramRecommendationScreen" component={ProgramRecommendationScreen} />
+            <Stack.Screen name="SubscriptionOfferScreen" component={SubscriptionOfferScreen} />
           </>
         ) : (
           <>
             <Stack.Screen name="MainTabs" component={MainTabs} />
             <Stack.Screen name="WorkoutActiveScreen" component={WorkoutActiveScreen} />
+            <Stack.Screen name="CameraAnalysisScreen" component={CameraAnalysisScreen} />
           </>
         )}
       </Stack.Navigator>
