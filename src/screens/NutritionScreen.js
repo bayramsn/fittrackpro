@@ -78,7 +78,7 @@ export default function NutritionScreen({ navigation }) {
         colors={['transparent', '#131313', '#131313']}
         className="absolute bottom-0 left-0 right-0 p-6 pt-lg z-20"
       >
-        <Button onPress={() => navigation.navigate('AgeScreen')} />
+        <Button onPress={() => navigation.navigate('SleepScreen')} />
       </LinearGradient>
     </SafeAreaView>
   );

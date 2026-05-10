@@ -69,7 +69,7 @@ export default function WorkoutDaysScreen({ navigation }) {
       </View>
 
       <View className="absolute bottom-0 left-0 right-0 p-6 pb-8 z-50">
-        <Button onPress={() => navigation.navigate('WorkoutEnvironmentScreen')} />
+        <Button onPress={() => navigation.navigate('FitnessLevelScreen')} />
       </View>
     </SafeAreaView>
   );

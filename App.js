@@ -10,6 +10,7 @@ import { useFonts as useLexendFonts, Lexend_700Bold, Lexend_800ExtraBold } from 
 
 // Screens
 import WelcomeScreen from './src/screens/WelcomeScreen';
+import LoginScreen from './src/screens/LoginScreen';
 import GoalScreen from './src/screens/GoalScreen';
 import GenderScreen from './src/screens/GenderScreen';
 import TargetWeightScreen from './src/screens/TargetWeightScreen';
@@ -25,6 +26,7 @@ import HeightScreen from './src/screens/HeightScreen';
 import InjuryScreen from './src/screens/InjuryScreen';
 import TargetMuscleScreen from './src/screens/TargetMuscleScreen';
 import ProgramRecommendationScreen from './src/screens/ProgramRecommendationScreen';
+import MainTabs from './src/screens/MainTabs';
 
 const Stack = createNativeStackNavigator();
 
@@ -68,6 +70,7 @@ export default function App() {
           }}
         >
           <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+          <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="GoalScreen" component={GoalScreen} />
           <Stack.Screen name="GenderScreen" component={GenderScreen} />
           <Stack.Screen name="CurrentWeightScreen" component={CurrentWeightScreen} />
@@ -83,6 +86,7 @@ export default function App() {
           <Stack.Screen name="InjuryScreen" component={InjuryScreen} />
           <Stack.Screen name="TargetMuscleScreen" component={TargetMuscleScreen} />
           <Stack.Screen name="ProgramRecommendationScreen" component={ProgramRecommendationScreen} />
+          <Stack.Screen name="MainTabs" component={MainTabs} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
