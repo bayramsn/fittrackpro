@@ -3,7 +3,7 @@ import { View, ActivityIndicator, Text, TouchableOpacity } from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import { useFonts as useInterFonts, Inter_400Regular, Inter_700Bold } from '@expo-google-fonts/inter';
@@ -11,9 +11,11 @@ import { useFonts as useLexendFonts, Lexend_700Bold, Lexend_800ExtraBold } from 
 
 import { AppProvider, useApp } from './src/context/AppContext';
 
-// Screens
+// Auth & Onboarding
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import LoginScreen from './src/screens/LoginScreen';
+import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
+import EmailVerificationScreen from './src/screens/EmailVerificationScreen';
 import GoalScreen from './src/screens/GoalScreen';
 import GenderScreen from './src/screens/GenderScreen';
 import TargetWeightScreen from './src/screens/TargetWeightScreen';
@@ -28,18 +30,34 @@ import WorkoutEnvironmentScreen from './src/screens/WorkoutEnvironmentScreen';
 import HeightScreen from './src/screens/HeightScreen';
 import InjuryScreen from './src/screens/InjuryScreen';
 import TargetMuscleScreen from './src/screens/TargetMuscleScreen';
-import ProgramRecommendationScreen from './src/screens/ProgramRecommendationScreen';
-import WorkoutActiveScreen from './src/screens/WorkoutActiveScreen';
 import PlanGeneratingScreen from './src/screens/PlanGeneratingScreen';
 import SubscriptionOfferScreen from './src/screens/SubscriptionOfferScreen';
-import CameraAnalysisScreen from './src/screens/CameraAnalysisScreen';
 
-// Tab Screens
+// Main Experience
 import DashboardScreen from './src/screens/DashboardScreen';
 import WorkoutsScreen from './src/screens/WorkoutsScreen';
 import NutritionTabScreen from './src/screens/NutritionTabScreen';
 import ProgressScreen from './src/screens/ProgressScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
+
+// Feature Modules
+import ProgramRecommendationScreen from './src/screens/ProgramRecommendationScreen';
+import WorkoutActiveScreen from './src/screens/WorkoutActiveScreen';
+import CameraAnalysisScreen from './src/screens/CameraAnalysisScreen';
+import PoseDetectionResultScreen from './src/screens/PoseDetectionResultScreen';
+import CommunityScreen from './src/screens/CommunityScreen';
+import ChallengeScreen from './src/screens/ChallengeScreen';
+import LeaderboardScreen from './src/screens/LeaderboardScreen';
+import AchievementScreen from './src/screens/AchievementScreen';
+
+// B2B & Admin
+import CoachPanelScreen from './src/screens/CoachPanelScreen';
+import GymPanelScreen from './src/screens/GymPanelScreen';
+import AdminPanelScreen from './src/screens/AdminPanelScreen';
+
+// Details
+import ExerciseDetailScreen from './src/screens/ExerciseDetailScreen';
+import MealDetailScreen from './src/screens/MealDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -57,7 +75,7 @@ const TabBar = ({ activeTab, setActiveTab }) => {
     { name: 'Workouts', icon: 'fitness-center', label: 'Antrenman' },
     { name: 'Nutrition', icon: 'restaurant', label: 'Beslenme' },
     { name: 'Progress', icon: 'trending-up', label: 'Gelişim' },
-    { name: 'Profile', icon: 'person', label: 'Profil' },
+    { name: 'Community', icon: 'groups', label: 'Topluluk' },
   ];
 
   return (
@@ -94,7 +112,7 @@ function MainTabs({ navigation }) {
       case 'Workouts': return <WorkoutsScreen navigation={navigation} />;
       case 'Nutrition': return <NutritionTabScreen navigation={navigation} />;
       case 'Progress': return <ProgressScreen navigation={navigation} />;
-      case 'Profile': return <ProfileScreen navigation={navigation} />;
+      case 'Community': return <CommunityScreen navigation={navigation} />;
       default: return <DashboardScreen navigation={navigation} />;
     }
   };
@@ -126,6 +144,8 @@ function Navigation() {
           <>
             <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
             <Stack.Screen name="LoginScreen" component={LoginScreen} />
+            <Stack.Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen} />
+            <Stack.Screen name="EmailVerificationScreen" component={EmailVerificationScreen} />
             <Stack.Screen name="GenderScreen" component={GenderScreen} />
             <Stack.Screen name="AgeScreen" component={AgeScreen} />
             <Stack.Screen name="HeightScreen" component={HeightScreen} />
@@ -149,6 +169,16 @@ function Navigation() {
             <Stack.Screen name="MainTabs" component={MainTabs} />
             <Stack.Screen name="WorkoutActiveScreen" component={WorkoutActiveScreen} />
             <Stack.Screen name="CameraAnalysisScreen" component={CameraAnalysisScreen} />
+            <Stack.Screen name="PoseDetectionResultScreen" component={PoseDetectionResultScreen} />
+            <Stack.Screen name="ChallengeScreen" component={ChallengeScreen} />
+            <Stack.Screen name="LeaderboardScreen" component={LeaderboardScreen} />
+            <Stack.Screen name="AchievementScreen" component={AchievementScreen} />
+            <Stack.Screen name="CoachPanelScreen" component={CoachPanelScreen} />
+            <Stack.Screen name="GymPanelScreen" component={GymPanelScreen} />
+            <Stack.Screen name="AdminPanelScreen" component={AdminPanelScreen} />
+            <Stack.Screen name="ExerciseDetailScreen" component={ExerciseDetailScreen} />
+            <Stack.Screen name="MealDetailScreen" component={MealDetailScreen} />
+            <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
           </>
         )}
       </Stack.Navigator>

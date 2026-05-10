@@ -69,6 +69,22 @@ export default function ProgressScreen() {
     </View>
   );
 
+  const renderPhotos = () => (
+    <View className="pb-24">
+       <View className="flex-row flex-wrap justify-between gap-y-4">
+          {[1, 2, 3, 4].map((i) => (
+            <View key={i} className="w-[48%] h-48 bg-surface-container rounded-3xl border border-white/5 items-center justify-center overflow-hidden">
+               <Image source={require('../../assets/images/placeholder.png')} className="w-full h-full opacity-20" />
+               <View className="absolute inset-0 items-center justify-center">
+                  <MaterialIcons name="add-a-photo" size={32} color="#8f9378" />
+                  <Text className="text-on-surface-variant/40 text-[8px] mt-2 font-bold uppercase">Fotoğraf Ekle</Text>
+               </View>
+            </View>
+          ))}
+       </View>
+    </View>
+  );
+
   const renderReports = () => (
     <View className="pb-24">
        <View className="bg-surface-container p-6 rounded-3xl border border-white/5 mb-6">
@@ -117,7 +133,9 @@ export default function ProgressScreen() {
       </View>
 
       <ScrollView className="flex-1 px-margin" showsVerticalScrollIndicator={false}>
-         {activeTab === 'Reports' ? renderReports() : renderStats()}
+         {activeTab === 'Stats' && renderStats()}
+         {activeTab === 'Photos' && renderPhotos()}
+         {activeTab === 'Reports' && renderReports()}
       </ScrollView>
     </SafeAreaView>
   );

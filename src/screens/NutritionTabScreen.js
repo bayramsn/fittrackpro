@@ -98,7 +98,7 @@ export default function NutritionTabScreen() {
   const renderRecipes = () => (
     <View className="pb-24">
        {recipes.map(recipe => (
-         <TouchableOpacity key={recipe.id} className="bg-surface-container rounded-3xl mb-4 overflow-hidden border border-white/5">
+         <TouchableOpacity key={recipe.id} onPress={() => navigation.navigate('MealDetailScreen')} className="bg-surface-container rounded-3xl mb-4 overflow-hidden border border-white/5">
             <View className="h-48 bg-surface-container-highest">
                <Image source={require('../../assets/images/placeholder.png')} className="w-full h-full opacity-40" />
                <View className="absolute top-4 right-4 bg-black/50 px-3 py-1 rounded-full flex-row items-center">

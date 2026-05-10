@@ -85,6 +85,7 @@ export default function WorkoutsScreen({ navigation }) {
           {filteredExercises.map((ex) => (
             <TouchableOpacity
               key={ex.id}
+              onPress={() => navigation.navigate('ExerciseDetailScreen')}
               className="bg-surface-container p-4 rounded-2xl flex-row items-center border border-white/5"
             >
               <View className="w-12 h-12 bg-surface-variant rounded-xl items-center justify-center mr-4">

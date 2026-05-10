@@ -36,12 +36,16 @@ export default function ProfileScreen({ navigation }) {
 
         <View className="bg-surface-container rounded-3xl overflow-hidden mb-6 border border-white/5">
           {[
-            { icon: 'settings', label: 'Hesap Ayarları', color: '#fff' },
-            { icon: 'notifications', label: 'Bildirimler', color: '#fff' },
-            { icon: 'security', label: 'Gizlilik ve Veri', color: '#fff' },
-            { icon: 'help-outline', label: 'Destek', color: '#fff' },
+            { icon: 'stars', label: 'Başarımlar', color: '#fff', screen: 'AchievementScreen' },
+            { icon: 'psychology', label: 'Koç Paneli (B2B)', color: '#fff', screen: 'CoachPanelScreen' },
+            { icon: 'business', label: 'Salon Paneli (B2B)', color: '#fff', screen: 'GymPanelScreen' },
+            { icon: 'admin-panel-settings', label: 'Yönetim Paneli', color: '#fff', screen: 'AdminPanelScreen' },
           ].map((item, i) => (
-            <TouchableOpacity key={i} className={`flex-row items-center justify-between p-5 ${i !== 3 ? 'border-b border-white/5' : ''}`}>
+            <TouchableOpacity
+              key={i}
+              onPress={() => navigation.navigate(item.screen)}
+              className={`flex-row items-center justify-between p-5 ${i !== 3 ? 'border-b border-white/5' : ''}`}
+            >
               <View className="flex-row items-center">
                 <MaterialIcons name={item.icon} size={24} color={item.color} />
                 <Text className="text-primary ml-4 font-medium">{item.label}</Text>
