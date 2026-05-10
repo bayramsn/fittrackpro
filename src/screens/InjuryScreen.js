@@ -103,7 +103,7 @@ export default function InjuryScreen({ navigation }) {
         colors={['transparent', '#131313', '#131313']}
         className="absolute bottom-0 left-0 right-0 pt-xl pb-margin px-margin z-40 flex items-center"
       >
-        <Button onPress={() => navigation.navigate('TargetMuscleScreen')} title="Analiz Et" icon="analytics" />
+        <Button onPress={() => navigation.navigate('TargetMuscleScreen')} />
       </LinearGradient>
     </SafeAreaView>
   );

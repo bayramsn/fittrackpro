@@ -115,7 +115,7 @@ export default function ProgramRecommendationScreen({ navigation }) {
                     <Text className="text-primary font-bold">Detaylar</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={() => navigation.navigate('WorkoutActiveScreen')}
+                    onPress={() => navigation.navigate('MainTabs')}
                     className="flex-1 bg-primary-fixed py-3 rounded-full items-center justify-center shadow-lg"
                     style={{
                       shadowColor: "rgba(202,243,0,0.3)",
@@ -159,7 +159,7 @@ export default function ProgramRecommendationScreen({ navigation }) {
                     <Text className="text-primary font-bold text-[14px]">Detaylar</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={() => navigation.navigate('WorkoutActiveScreen')}
+                    onPress={() => navigation.navigate('MainTabs')}
                     className="flex-1 md:w-full bg-surface-container-high border border-[#ffffff10] py-2 px-4 rounded-full items-center justify-center"
                   >
                     <Text className="text-primary font-bold text-[14px]">Seç</Text>

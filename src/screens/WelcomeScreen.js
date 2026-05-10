@@ -31,7 +31,7 @@ export default function WelcomeScreen({ navigation }) {
 
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate('GoalScreen')}
+            onPress={() => navigation.navigate('LoginScreen')}
             className="w-full bg-primary-fixed py-4 rounded-full flex items-center justify-center shadow-lg mt-8"
             style={{
               shadowColor: "rgba(202,243,0,0.25)",

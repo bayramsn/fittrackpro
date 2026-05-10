@@ -77,7 +77,7 @@ export default function AgeScreen({ navigation }) {
         </Text>
 
         <View className="mt-auto">
-          <Button onPress={() => navigation.navigate('ActivityScreen')} />
+          <Button onPress={() => navigation.navigate('HeightScreen')} />
         </View>
       </View>
     </SafeAreaView>
