@@ -25,6 +25,7 @@ import HeightScreen from './src/screens/HeightScreen';
 import InjuryScreen from './src/screens/InjuryScreen';
 import TargetMuscleScreen from './src/screens/TargetMuscleScreen';
 import ProgramRecommendationScreen from './src/screens/ProgramRecommendationScreen';
+import WorkoutActiveScreen from './src/screens/WorkoutActiveScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -83,6 +84,7 @@ export default function App() {
           <Stack.Screen name="InjuryScreen" component={InjuryScreen} />
           <Stack.Screen name="TargetMuscleScreen" component={TargetMuscleScreen} />
           <Stack.Screen name="ProgramRecommendationScreen" component={ProgramRecommendationScreen} />
+          <Stack.Screen name="WorkoutActiveScreen" component={WorkoutActiveScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
