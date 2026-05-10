@@ -20,7 +20,7 @@ export default function FitnessLevelScreen({ navigation }) {
     <SafeAreaView className="flex-1 bg-background relative">
       <View className="absolute top-0 left-0 w-full h-[353px] z-0 opacity-20 pointer-events-none">
         <ImageBackground
-          source={{ uri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDE6yU5FvccK__XFD4mRD9GrH02OhUhIN9io27tAzV2l7_kAquLpb8yeipBdjWCq8eUTaJj5nP_7gh8QJAlRzNHCuecu8EZWwqpAzCXdUZjiaT2FOrnpk9AlKbnuisppG2fKI5VKLBkVUUO8Aid9TVt9sZW_fBDkH0twdxjzI9e_tj_ySvBto7ga0AkA_DZcIOCvRe4MaBJQIcApVmNOW2dMhSsjUIqhMCE7a_FZcNgSl8mLVl_sw4XA1jh6WMqVduby21g4VbWTg8' }}
+          source={require('../../assets/images/placeholder.png')}
           className="w-full h-full"
           resizeMode="cover"
         >

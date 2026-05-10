@@ -69,7 +69,7 @@ export default function ProgramRecommendationScreen() {
 
               <View className="h-32 w-full relative">
                 <ImageBackground
-                  source={{ uri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBLVU9e8zJXermuOs611JG1qYBolHCKuuNgy1AhhF2aZBodJzcerv-b7NkTTqARGjtxcxJSvgLgNg5bHHCiIZXcUHGngnYoHUFDm6phwsCfTXlPkYC3oi5Z_NhNlghkD9Saswltef6vkwCLNoG2BKx6towgnL9wEcMupvk7EobYquEg5x1WluaEuNM4Y9MFAlxnLMKLh8_XcNhaMTzdlY_Qe2eIbbjZFrW5vbXX3t5pB2gzhBfU9DW70ji23HJuO3hgHDdTTne09b0' }}
+                  source={require('../../assets/images/placeholder.png')}
                   className="w-full h-full opacity-60"
                   resizeMode="cover"
                 />

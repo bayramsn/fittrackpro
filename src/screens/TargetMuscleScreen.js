@@ -37,7 +37,7 @@ export default function TargetMuscleScreen({ navigation }) {
     <SafeAreaView className="flex-1 bg-background relative">
       <View className="absolute inset-0 z-0 opacity-20 pointer-events-none">
         <ImageBackground
-          source={{ uri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD2LIq0IAujtSkRhnb-UZs4sGp1yOSuQroxVzhmcfxUvnOhP_X4EGDHT6Hgre7sLz2kFxzO_vDAU9Aic_18Fax-mfNXXDxkfUXtdWIC3W4kVXohnf-Yz2rHSWDsO1MqDpS6j-VxRhTCQQmmRavS_BoaWHTKRDA2J4Y9SooG6ThMa8UdHegIFmqRzJ-rc4kzZ1lD9uREXkNyG9PVN3ey04e13GnNKH5uqLLLiv-kghu_l8mw19MtDcl9l08vdfohZqigLdxm4NxJEYA' }}
+          source={require('../../assets/images/placeholder.png')}
           className="w-full h-full"
           resizeMode="cover"
         >

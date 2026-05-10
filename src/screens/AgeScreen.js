@@ -13,7 +13,7 @@ export default function AgeScreen({ navigation }) {
     <SafeAreaView className="flex-1 bg-background">
       <View className="absolute inset-0 z-0 opacity-20">
         <ImageBackground
-          source={{ uri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCTT8YNiVHn7HtyZxSluE5Ek5jpgnsDol_0Cta8YqusRKhm3GLkC_bnc7h2q41HAQaOmORvfXYBQFyUrq0mzHR9uVylrGS2zQ6NXqqnDbq42C74FpYk-h1OgHZzXd1dv2Jh6PKm8SfIdW9dJP6Rpxk2WUBh-fA2bmkF9sMfi-JPV1vI7ZSQ7F4JVPPb4PMeA_R89GRLvEdtlHPQb9bIRNpcWAdagDId31hFrtS7s9jSH_X12ynC1OBfNIiLD3UJrzduURF3VuWgDT8' }}
+          source={require('../../assets/images/placeholder.png')}
           className="w-full h-full"
           resizeMode="cover"
         >

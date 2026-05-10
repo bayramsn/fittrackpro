@@ -13,7 +13,7 @@ export default function WorkoutDaysScreen({ navigation }) {
     <SafeAreaView className="flex-1 bg-background relative">
       <View className="absolute inset-0 z-0 opacity-30 pointer-events-none">
         <ImageBackground
-          source={{ uri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB6GU6Vir6ch0w-As8sAFU2cJqSDABJtst5iJNGgtzm4QlmpIqU3B7fARESE2b0p_DNWabE2oBRxGbP7g2yKBq6Tfg3-0tDnjrbysoLdaFUkxKPc7KSQH87xdTJIx66n7Zgb5Lgzd3sSyF4ixmv_eUr9Z0mVw5Pom3ma59f74K7JYAviEMdvpW_ACVtuRRrqhf1l3nXVwt-uiX5cmjDmWx05qAB0fIu10JNALS5ECeTOTb91T8aErUA8iNkU78m84FZuVcoHwsaL4k' }}
+          source={require('../../assets/images/placeholder.png')}
           className="w-full h-full"
           resizeMode="cover"
         >

@@ -7,7 +7,7 @@ export default function WelcomeScreen({ navigation }) {
     <View className="flex-1 bg-background relative overflow-hidden">
       <View className="absolute inset-0 z-0">
         <ImageBackground
-          source={{ uri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC801Oi7Izsa6HTztjDvngL5pdoXEH2pIOi3ZJ1_PqKRqhcOjlbSnq66VZ2JUurlDByM7XvC_mAJfSh9Hkov3vGddv6Ju5koaMT_YQHOqoG6AeRAQlpNwedBIWCIpUTnTZAccgcBqJ0sGIb5dM51ZZ83DH6e0xi8KdDuGxUo9O747f_5j4iNCpaQd4AMPlSsyyC_2X44jFez-hD_ctvrbsXPUhpjn9lKh1Iu4kwhTxslvRLM_fqev2nqcg0VHQvbu-WXooU6nwfcGs' }}
+          source={require('../../assets/images/placeholder.png')}
           className="w-full h-full"
           resizeMode="cover"
         >
