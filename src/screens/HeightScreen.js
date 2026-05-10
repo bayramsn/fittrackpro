@@ -69,7 +69,7 @@ export default function HeightScreen({ navigation }) {
         </View>
 
         <View className="mt-auto pt-md pb-md">
-          <Button onPress={() => navigation.navigate('InjuryScreen')} />
+          <Button onPress={() => navigation.navigate('CurrentWeightScreen')} />
         </View>
       </View>
     </SafeAreaView>

@@ -91,7 +91,7 @@ export default function CurrentWeightScreen({ navigation }) {
         colors={['transparent', '#131313', '#131313']}
         className="absolute bottom-0 left-0 w-full px-6 py-8 mt-auto shrink-0 z-10 relative"
       >
-        <Button onPress={() => navigation.navigate('TargetWeightScreen')} />
+        <Button onPress={() => navigation.navigate('GoalScreen')} />
       </LinearGradient>
     </SafeAreaView>
   );

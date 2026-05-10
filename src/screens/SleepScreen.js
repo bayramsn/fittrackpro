@@ -83,7 +83,7 @@ export default function SleepScreen({ navigation }) {
         colors={['transparent', '#131313', '#131313']}
         className="absolute bottom-0 left-0 right-0 p-6 pt-lg z-20"
       >
-        <Button onPress={() => navigation.navigate('WorkoutDaysScreen')} />
+        <Button onPress={() => navigation.navigate('InjuryScreen')} />
       </LinearGradient>
     </SafeAreaView>
   );
