@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground } from 'react-native';
+import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground, Linking } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -7,6 +7,20 @@ import TopAppBar from '../components/TopAppBar';
 import ProgressBar from '../components/ProgressBar';
 
 export default function ProgramRecommendationScreen() {
+  const handleOpenVideo = async () => {
+    const url = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; // Replace with actual program video link
+    try {
+      const supported = await Linking.canOpenURL(url);
+      if (supported) {
+        await Linking.openURL(url);
+      } else {
+        console.warn("Don't know how to open URI: " + url);
+      }
+    } catch (error) {
+      console.error("An error occurred", error);
+    }
+  };
+
   const recommendations = [
     {
       id: 'upper_lower',
@@ -94,7 +108,10 @@ export default function ProgramRecommendationScreen() {
                 </View>
 
                 <View className="flex-row gap-3 mt-sm">
-                  <TouchableOpacity className="flex-1 bg-transparent border border-surface-variant py-3 rounded-full items-center justify-center">
+                  <TouchableOpacity
+                    onPress={handleOpenVideo}
+                    className="flex-1 bg-transparent border border-surface-variant py-3 rounded-full items-center justify-center"
+                  >
                     <Text className="text-primary font-bold">Detaylar</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
@@ -134,7 +151,10 @@ export default function ProgramRecommendationScreen() {
                 </View>
 
                 <View className="flex-row gap-2 md:flex-col pt-4 md:pt-0 border-t border-[#ffffff10] md:border-t-0 md:border-l md:w-36 md:items-center md:justify-center">
-                  <TouchableOpacity className="flex-1 md:w-full bg-transparent border border-surface-variant py-2 px-4 rounded-full items-center justify-center">
+                  <TouchableOpacity
+                    onPress={handleOpenVideo}
+                    className="flex-1 md:w-full bg-transparent border border-surface-variant py-2 px-4 rounded-full items-center justify-center"
+                  >
                     <Text className="text-primary font-bold text-[14px]">Detaylar</Text>
                   </TouchableOpacity>
                   <TouchableOpacity className="flex-1 md:w-full bg-surface-container-high border border-[#ffffff10] py-2 px-4 rounded-full items-center justify-center">
