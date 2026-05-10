@@ -2,11 +2,18 @@ import React from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground, Linking } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useApp } from '../context/AppContext';
 
 import TopAppBar from '../components/TopAppBar';
 import ProgressBar from '../components/ProgressBar';
 
 export default function ProgramRecommendationScreen({ navigation }) {
+  const { setOnboardingComplete } = useApp();
+  const handleFinishOnboarding = () => {
+    setOnboardingComplete(true);
+    // MainTabs is now the only screen when onboardingComplete is true
+  };
+
   const handleOpenVideo = async () => {
     const url = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; // Replace with actual program video link
     try {
@@ -115,7 +122,7 @@ export default function ProgramRecommendationScreen({ navigation }) {
                     <Text className="text-primary font-bold">Detaylar</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={() => navigation.navigate('MainTabs')}
+                    onPress={handleFinishOnboarding}
                     className="flex-1 bg-primary-fixed py-3 rounded-full items-center justify-center shadow-lg"
                     style={{
                       shadowColor: "rgba(202,243,0,0.3)",
@@ -159,7 +166,7 @@ export default function ProgramRecommendationScreen({ navigation }) {
                     <Text className="text-primary font-bold text-[14px]">Detaylar</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={() => navigation.navigate('MainTabs')}
+                    onPress={handleFinishOnboarding}
                     className="flex-1 md:w-full bg-surface-container-high border border-[#ffffff10] py-2 px-4 rounded-full items-center justify-center"
                   >
                     <Text className="text-primary font-bold text-[14px]">Seç</Text>

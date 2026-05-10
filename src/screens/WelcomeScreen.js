@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, ImageBackground, TouchableOpacity, SafeAreaView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useApp } from '../context/AppContext';
 
 export default function WelcomeScreen({ navigation }) {
   return (

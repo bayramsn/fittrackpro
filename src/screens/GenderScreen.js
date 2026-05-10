@@ -2,13 +2,20 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, Image } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useApp } from '../context/AppContext';
 
 import TopAppBar from '../components/TopAppBar';
 import ProgressBar from '../components/ProgressBar';
 import Button from '../components/Button';
 
 export default function GenderScreen({ navigation }) {
+  const { updateProfile } = useApp();
   const [selectedGender, setSelectedGender] = useState('male');
+
+  const handleNext = () => {
+    updateProfile({ gender: selectedGender });
+    navigation.navigate('AgeScreen');
+  };
 
   return (
     <SafeAreaView className="flex-1 bg-background">
@@ -140,7 +147,7 @@ export default function GenderScreen({ navigation }) {
         colors={['transparent', '#131313', '#131313']}
         className="absolute bottom-0 left-0 right-0 px-margin pt-md pb-xl z-10"
       >
-        <Button onPress={() => navigation.navigate('AgeScreen')} />
+        <Button onPress={handleNext} />
       </LinearGradient>
     </SafeAreaView>
   );

@@ -2,8 +2,15 @@ import React from 'react';
 import { View, Text, SafeAreaView, TouchableOpacity, ImageBackground } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useApp } from '../context/AppContext';
 
 export default function LoginScreen({ navigation }) {
+  const { login } = useApp();
+
+  const handleLogin = () => {
+    login();
+    navigation.navigate('GenderScreen');
+  };
   return (
     <SafeAreaView className="flex-1 bg-background">
       <View className="absolute inset-0 z-0 opacity-20">
@@ -37,7 +44,7 @@ export default function LoginScreen({ navigation }) {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => navigation.navigate('GenderScreen')}
+            onPress={handleLogin}
             className="w-full bg-primary-fixed py-4 rounded-full flex items-center justify-center mt-8"
           >
             <Text className="text-on-primary-fixed font-bold text-lg">E-posta ile devam et</Text>
